@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Task</title>
+</head>
+<body>
+    {% block content %}
+
+        <main class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4 mt-5">
+                    <form method="POST" class="card card-body">
+                        <h1 class="text-center">Create task</h1>
+    
+                        <p style="color: red;">{{error}}</p>
+                        {% csrf_token %}
+
+                        {{form.as_p}}
+                        <button class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    {% endblock %}
+</body>
+</html>
+
+
+
